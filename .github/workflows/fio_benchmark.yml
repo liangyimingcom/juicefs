@@ -2,7 +2,7 @@ name: "fio-benchmark"
 
 on:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '13 15 * * *'
   workflow_dispatch:
     inputs:
       size:
