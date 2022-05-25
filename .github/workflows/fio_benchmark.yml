@@ -59,6 +59,10 @@ jobs:
           disk_warning_value=90
           decrease_ratio=0.8
           fio_jobs=(
+            "big-file-random-write-4k:      --rw=randwrite --refill_buffers --size=${size} --bs=4k" \
+            "big-file-random-write-16k:     --rw=randwrite --refill_buffers --size=${size} --bs=16k" \
+            "big-file-random-write-64k:     --rw=randwrite --refill_buffers --size=${size} --bs=64k" \
+            "big-file-random-write-256k:    --rw=randwrite --refill_buffers --size=${size} --bs=256k" \
             "big-file-sequential-read:      --rw=read --refill_buffers --bs=256k --size=${size}" \
             "big-file-sequential-write:     --rw=write --refill_buffers --bs=256k --size=${size}" \
             "big-file-multi-read-1:         --rw=read --refill_buffers --bs=256k --size=${size} --numjobs=1" \
@@ -75,10 +79,6 @@ jobs:
             "big-file-rand-read-16k:        --rw=randread --refill_buffers --size=${size} --filename=randread.bin --bs=16k" \
             "big-file-rand-read-64k:        --rw=randread --refill_buffers --size=${size} --filename=randread.bin --bs=64k" \
             "big-file-rand-read-256k:       --rw=randread --refill_buffers --size=${size} --filename=randread.bin --bs=256k" \
-            "big-file-random-write-4k:      --rw=randwrite --refill_buffers --size=${size} --bs=4k" \
-            "big-file-random-write-16k:     --rw=randwrite --refill_buffers --size=${size} --bs=16k" \
-            "big-file-random-write-64k:     --rw=randwrite --refill_buffers --size=${size} --bs=64k" \
-            "big-file-random-write-256k:    --rw=randwrite --refill_buffers --size=${size} --bs=256k" \
             "small-file-seq-read-4k:        --rw=read --file_service_type=sequential --bs=4k --filesize=4k --nrfiles=${nrfiles}  :--cache-size=0" \
             "small-file-seq-read-16k:       --rw=read --file_service_type=sequential --bs=16k --filesize=16k --nrfiles=${nrfiles} :--cache-size=0" \
             "small-file-seq-read-64k:       --rw=read --file_service_type=sequential --bs=64k --filesize=64k --nrfiles=${nrfiles} :--cache-size=0" \
